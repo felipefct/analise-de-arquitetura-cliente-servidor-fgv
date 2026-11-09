@@ -1,0 +1,19 @@
+{
+  "name": "meu-ambiente-frontend",
+  "version": "1.0.0",
+  "description": "Configuração de ambiente frontend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  }
+}

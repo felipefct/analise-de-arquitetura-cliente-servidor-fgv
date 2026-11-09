@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Cliente-Servidor: portal.fgv.br</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f9f9f9; }
+        header, main { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #003366; }
+        pre { background: #1e1e1e; color: #00ff00; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Análise de Comunicação: portal.fgv.br</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Como funciona o fluxo Cliente-Servidor</h2>
+            <article>
+                <h3>1. Processo de Resolução DNS</h3>
+                <p>Ao digitar <strong>portal.fgv.br</strong>, o navegador não sabe como encontrar o servidor fisicamente. Ele consulta um Servidor DNS (Domain Name System), que atua como uma "lista telefônica" da internet. O DNS traduz o domínio legível para um endereço IP numérico (ex: 200.20.10.X), permitindo que o navegador saiba para onde enviar a requisição.</p>
+            </article>
+            <article>
+                <h3>2. Cache do Navegador</h3>
+                <p>Para otimizar o carregamento, o navegador verifica seu <strong>cache local</strong> antes de baixar os arquivos. Se imagens, estilos ou scripts da FGV já tiverem sido baixados em uma visita recente e ainda forem válidos, o navegador os carrega a partir do seu próprio disco rígido, economizando tempo e largura de banda.</p>
+            </article>
+            <article>
+                <h3>3. O Papel dos Roteadores</h3>
+                <p>A comunicação não ocorre em uma linha reta. Os dados enviados pelo seu computador (pacotes de dados) passam por diversos <strong>roteadores</strong> ao longo da rede mundial de computadores. Esses roteadores determinam o melhor e mais rápido caminho físico para garantir que as informações cheguem ao servidor da FGV e voltem para você.</p>
+            </article>
+            <article>
+                <h3>4. Frontend vs Backend</h3>
+                <p><strong>Frontend (Cliente):</strong> É o código que roda no seu navegador (HTML, CSS e JavaScript). É a interface visual do portal da FGV com a qual você interage diretamente.<br>
+                <strong>Backend (Servidor):</strong> É a infraestrutura da FGV que recebe sua requisição, processa regras de negócio, consulta bancos de dados (ex: notícias, cursos) e envia a resposta de volta ao seu navegador.</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Diagrama do Fluxo de Dados</h2>
+            <pre>
+[SEU NAVEGADOR] (Cliente/Frontend)
+      │ 
+      ├── 1. Pergunta IP de portal.fgv.br ──> [SERVIDOR DNS]
+      │                                         │
+      │ <── 2. Retorna o Endereço IP ───────────┘
+      │
+      ├── 3. Envia Requisição HTTP(S) ────────┐
+      │                                       v
+      │                              [ROTEADORES DA INTERNET] (Caminho dos pacotes)
+      │                                       │
+      │                                       v
+      │ <── 5. Retorna (HTML, CSS, JS, Dados) ┤  [SERVIDOR FGV] (Backend/Banco de Dados)
+      │                                       │     (Processa a requisição e monta a resposta)
+      v                                       │
+(Renderiza a página) <────────────────────────┘
+            </pre>
+        </section>
+    </main>
+</body>
+</html>
