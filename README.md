@@ -15,4 +15,5 @@ Após clonar ou baixar este projeto, abra o terminal na pasta raiz e execute o c
 ## Propósito de cada ferramenta utilizada
 - **Express**: Framework rápido e minimalista para Node.js, utilizado para criar o servidor e APIs.
 - **ESLint**: Ferramenta de linting (análise estática) que ajuda a manter a qualidade e padronização do código JavaScript.
-- **Prettier**: Formatador de código de opinião forte, utilizado para garantir que todo o código escrito mantenha o mesmo padrão visual e estrutural.
+- **Prettier**: Formatador de código de opinião forte, utilizado para garantir que todo o código escrito mantenha o mesmo padrão visual e estrutural.# an-lise-de-arquitetura-cliente-servidor-fgv
+# an-lise-de-arquitetura-cliente-servidor-fgv
